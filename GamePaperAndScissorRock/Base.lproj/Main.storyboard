@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina5_5" orientation="portrait">
+    <device id="retina5_9" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -15,37 +17,49 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="GamePaperAndScissorRock" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="812" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="ATz-5b-6ve">
-                                <rect key="frame" x="87" y="347" width="239" height="42"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="60q-fJ-PaA">
-                                        <rect key="frame" x="0.0" y="0.0" width="104.66666666666667" height="42"/>
-                                        <state key="normal" backgroundImage="rock"/>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bDN-h1-zN5">
-                                        <rect key="frame" x="134.66666666666666" y="0.0" width="104.33333333333334" height="42"/>
-                                        <state key="normal" backgroundImage="paper"/>
-                                    </button>
-                                </subviews>
-                            </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NmQ-4d-77R">
-                                <rect key="frame" x="144" y="89" width="87" height="97"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HHe-3x-2Th">
+                                <rect key="frame" x="346.66666666666669" y="-41.333333333333336" width="119" height="119.33333333333334"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="119" id="g5S-4e-rKm"/>
+                                    <constraint firstAttribute="height" constant="119" id="sin-zT-PVZ"/>
+                                </constraints>
                                 <state key="normal" backgroundImage="scissors"/>
                             </button>
+                            <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="bSm-NJ-WtD">
+                                <rect key="frame" x="74" y="128" width="664" height="119"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Ub-dI-eWF">
+                                        <rect key="frame" x="0.0" y="0.0" width="317" height="119"/>
+                                        <state key="normal" backgroundImage="paper"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yli-As-efe">
+                                        <rect key="frame" x="347" y="0.0" width="317" height="119"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="119" id="dtT-ms-by2"/>
+                                        </constraints>
+                                        <state key="normal" backgroundImage="rock"/>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="6Ub-dI-eWF" firstAttribute="baseline" secondItem="Yli-As-efe" secondAttribute="baseline" id="5bt-IC-geN"/>
+                                    <constraint firstItem="6Ub-dI-eWF" firstAttribute="firstBaseline" secondItem="Yli-As-efe" secondAttribute="firstBaseline" id="FF8-FF-goo"/>
+                                    <constraint firstItem="6Ub-dI-eWF" firstAttribute="baseline" secondItem="Yli-As-efe" secondAttribute="baseline" id="Ubt-hb-sx2"/>
+                                    <constraint firstItem="6Ub-dI-eWF" firstAttribute="baseline" secondItem="Yli-As-efe" secondAttribute="baseline" id="V5e-WU-adf"/>
+                                    <constraint firstItem="Yli-As-efe" firstAttribute="firstBaseline" secondItem="6Ub-dI-eWF" secondAttribute="firstBaseline" id="b6b-oL-KO4"/>
+                                    <constraint firstItem="Yli-As-efe" firstAttribute="firstBaseline" secondItem="6Ub-dI-eWF" secondAttribute="firstBaseline" id="gau-E3-c8b"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="ATz-5b-6ve" firstAttribute="centerX" secondItem="NmQ-4d-77R" secondAttribute="centerX" id="BeY-zM-Qcw"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="NmQ-4d-77R" secondAttribute="bottom" constant="453" id="GU7-IG-KrX"/>
-                            <constraint firstItem="ATz-5b-6ve" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="87" id="VFP-aV-xC9"/>
-                            <constraint firstItem="ATz-5b-6ve" firstAttribute="top" secondItem="NmQ-4d-77R" secondAttribute="bottom" constant="64" id="bSq-fY-PjD"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="NmQ-4d-77R" secondAttribute="trailing" constant="165" id="gvp-U2-bq3"/>
-                            <constraint firstItem="ATz-5b-6ve" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="q5I-ei-wfH"/>
-                            <constraint firstItem="NmQ-4d-77R" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="164" id="yJH-NW-fFo"/>
-                            <constraint firstItem="NmQ-4d-77R" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="164" id="z4g-RL-3SQ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="bSm-NJ-WtD" secondAttribute="trailing" constant="10" id="E8r-fT-XqU"/>
+                            <constraint firstItem="HHe-3x-2Th" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="uqJ-9x-Gua"/>
+                            <constraint firstItem="bSm-NJ-WtD" firstAttribute="top" secondItem="HHe-3x-2Th" secondAttribute="bottom" constant="50" id="x5Y-P1-ghz"/>
+                            <constraint firstItem="bSm-NJ-WtD" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="xIy-BE-5JM"/>
+                            <constraint firstItem="bSm-NJ-WtD" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="y7n-0T-Bod"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
